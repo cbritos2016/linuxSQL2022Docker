@@ -1,0 +1,13 @@
+sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=passwordgoesHERE" -p 1433:1433 -v sqldata1:/var/opt/mssql --name sql1 --hostname sql1 -d mcr.microsoft.com/mssql/server:2022-latest
+
+sudo docker ps
+
+sudo docker ps -a
+sudo docker stop xxxxxxx
+sudo docker rm xxxxxxx
+
+sudo docker volume ls
+
+sudo docker exec -t sql1 cat /var/opt/mssql/log/errorlog | grep connection
+
+sudo docker exec -it sql1 "bash"
